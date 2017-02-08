@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">FollowMe</string>
+    <string name="login_welcome_msg">Welcome to FollowMe. Please login below</string>
+
+    <string name="etFirstnameHint">Firstname</string>
+    <string name="etSurnameHint">Surname</string>
+    <string name="etUsernameHint">Nickname</string>
+    <string name="etEmailHint">e-mail</string>
+    <string name="etMobileNumberHint">Mobile number</string>
+    <string name="etPasswordHint">Password</string>
+    <string name="etConfPasswordHint">Confirm password</string>
+
+    <string name="btnLoginTxt">Login</string>
+    <string name="btnRegisterTxt">Register</string>
+    <string name="tvRegisterHD">Register</string>
+    <string name="tvRegisterDesc">Please complete the fields below</string>
+    <string name="tvRegisterTxt">Click here to register</string>
+    <string name="tvWelcomeMsg">Welcome to your user area!</string>
+    <string name="tvStravaID">STRAVA id</string>
 </resources>
