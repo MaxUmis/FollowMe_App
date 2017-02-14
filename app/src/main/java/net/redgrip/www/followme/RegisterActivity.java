@@ -52,17 +52,23 @@ public class RegisterActivity extends AppCompatActivity {
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        /*AlertDialog.Builder adb = new AlertDialog.Builder(RegisterActivity.this);
+                        adb.setMessage("Register failed: " + response.toString() + "")
+                                .setNegativeButton("Retry",null)
+                                .create()
+                                .show();*/
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-
+                            //boolean success = true;
+                            //Toast.makeText(RegisterActivity.this,jsonResponse.toString(), Toast.LENGTH_LONG).show();
                             if (success){
                                 /*
                                 Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(i);
                                 */
 
-                                Toast.makeText(RegisterActivity.this, "", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "yup yup, got back true", Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 AlertDialog.Builder adb = new AlertDialog.Builder(RegisterActivity.this);
@@ -70,17 +76,22 @@ public class RegisterActivity extends AppCompatActivity {
                                         .setNegativeButton("Retry",null)
                                         .create()
                                         .show();
+
                             }
 
                         } catch (JSONException e) {
+                            //Toast.makeText(RegisterActivity.this,response.toString(), Toast.LENGTH_LONG).show();
+
                             e.printStackTrace();
                         }
+                        pbRegister.setVisibility(View.INVISIBLE);
                     }
                 };
 
                 RegisterRequest registerRequest = new RegisterRequest(firstname, surname, username, email, mobilenumber, password, responseListener);
                 RequestQueue q = Volley.newRequestQueue(RegisterActivity.this);
                 q.add(registerRequest);
+                Toast.makeText(RegisterActivity.this,"Register request added to queue", Toast.LENGTH_LONG).show();
             }
         });
 

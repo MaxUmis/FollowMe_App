@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class RegisterRequest extends StringRequest {
 
-    private static final String RegisterRequestURL ="";
+    private static final String RegisterRequestURL ="http://followmewebapi.redgrip.net/api/register/";
     private Map<String, String> params;
 
     public RegisterRequest(String firstname, String surname, String username, String email, String mobileNumber, String password, Response.Listener<String> listener){
